@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tentang Kami - Kenangan Jiwa</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background-color: #121212; color: white; line-height: 1.6; }
+
+    nav {
+      width: 100%; 
+      padding: 15px 40px; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      z-index: 999;
+    }
+    .logo img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid #c59d6b;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .logo img:hover { transform: scale(1.1); }
+
+    .logo { font-size: 24px; font-weight: bold; }
+    .logo span { color: #c59d6b; }
+
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-links { display: flex; gap: 30px; }
+    .nav-links a { color: white; text-decoration: none; font-size: 16px; transition: color 0.3s; }
+    .nav-links a:hover { color: #FFA500; }
+    .nav-links a.active { color: #FFA500; }
+
+    .hamburger { display: none; flex-direction: column; cursor: pointer; margin-left: 20px; }
+    .hamburger span { height: 3px; width: 25px; background: white; margin: 4px 0; }
+
+    .container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+    h1 { font-size: 36px; color: #c59d6b; margin-bottom: 10px; }
+    h3 { font-size: 22px; color: #ddd; margin-bottom: 30px; }
+    p { font-size: 18px; color: #ccc; margin-bottom: 20px; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; background-color: #000; position: absolute; top: 70px; right: 40px; width: 200px; padding: 20px; border-radius: 8px; }
+      .nav-links.active { display: flex; }
+      .hamburger { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <a><img src="logokopi1.png" alt="Logo Kenangan Jiwa"></a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>      
+        <a href="tentang.html" class="active">Tentang Kami</a>
+        <a href="kontak.html">Kontak</a>
+        <a href="lokasi.html">Lokasi</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>KENANGAN JIWA</h1>
+    <h3>Lebih dari 10 Tahun Menemani Momen Kopimu</h3>
+    <p>
+      Kenangan Jiwa adalah tempat nongkrong favorit yang mengusung konsep cozy dan hangat, menjadi pilihan utama pecinta kopi se-Jabodetabek. 
+      Kami menawarkan suasana yang nyaman dan menu kopi yang beragam, mulai dari kopi klasik hingga kreasi kopi kekinian. 
+      Tidak hanya kopi, kami juga menyediakan berbagai pilihan camilan dan makanan berat yang cocok menemani obrolan hangatmu.
+    </p>
+    <p>
+      Kami adalah rumah bagi penikmat kopi sejati. Setiap cangkir disajikan dengan sepenuh hati menggunakan biji kopi pilihan terbaik dari Nusantara.
+      Kopi yang kami seduh bukan sekadar minuman, tapi kenangan yang tertinggal di setiap tegukan.
+    </p>
+    <p>
+      Kenangan Jiwa hadir untuk kamu yang ingin melepas penat, berbagi cerita, atau sekadar menikmati aroma kopi yang menenangkan.
+      Mari rasakan pengalaman ngopi yang penuh makna — karena setiap kenangan dimulai dari secangkir kopi.
+    </p>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>

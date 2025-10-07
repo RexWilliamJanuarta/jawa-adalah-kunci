@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak | Kenangan Jiwa</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background-color: #121212; color: white; }
+
+    nav {
+      width: 100%; 
+      padding: 15px 40px; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      z-index: 999;
+    }
+    .logo img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid #c59d6b;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .logo img:hover { transform: scale(1.1); }
+
+    .logo { font-size: 24px; font-weight: bold; }
+    .logo span { color: #c59d6b; }
+
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-links { display: flex; gap: 30px; }
+    .nav-links a { color: white; text-decoration: none; font-size: 16px; transition: color 0.3s; }
+    .nav-links a:hover { color: #FFA500; }
+    .nav-links a.active { color: #FFA500; }
+
+    .hamburger { display: none; flex-direction: column; cursor: pointer; margin-left: 20px; }
+    .hamburger span { height: 3px; width: 25px; background: white; margin: 4px 0; }
+
+    .kontak-section { padding: 60px 20px; max-width: 600px; margin: auto; }
+    .kontak-section h2 { font-size: 36px; color: #c59d6b; margin-bottom: 20px; text-align: center; }
+    .kontak-section form { display: flex; flex-direction: column; gap: 15px; }
+    .kontak-section input,
+    .kontak-section textarea { padding: 12px; border: none; border-radius: 5px; background: #2a2a2a; color: white; font-size: 14px; }
+    .kontak-section button { padding: 12px; background-color: #c59d6b; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+    .kontak-section button:hover { background-color: #b38754; }
+
+    footer { text-align: center; padding: 20px; color: #aaa; font-size: 14px; margin-top: 60px; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; background-color: #000; position: absolute; top: 70px; right: 40px; width: 200px; padding: 20px; border-radius: 8px; }
+      .nav-links.active { display: flex; }
+      .hamburger { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <a><img src="logokopi1.png" alt="Logo Kenangan Jiwa"></a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>        
+        <a href="tentang.html">Tentang Kami</a>
+        <a href="kontak.html" class="active">Kontak</a>
+        <a href="lokasi.html">Lokasi</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="kontak-section">
+    <h2>Hubungi Kami</h2>
+    <form onsubmit="window.location.href='menu.html'; return false;">
+      <input type="text" placeholder="Nama Anda" required />
+      <input type="email" placeholder="Email Anda" required />
+      <textarea rows="5" placeholder="Pesan Anda" required></textarea>
+      <button type="submit">Kirim Pesan</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Kenangan Jiwa. Semua Hak Dilindungi.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
